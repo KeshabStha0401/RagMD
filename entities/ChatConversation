@@ -1,0 +1,61 @@
+{
+  "name": "ChatConversation",
+  "type": "object",
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "description": "ID of the document this conversation is about"
+    },
+    "document_title": {
+      "type": "string",
+      "description": "Cached document title for display"
+    },
+    "title": {
+      "type": "string",
+      "description": "Auto-generated conversation title from first message"
+    },
+    "messages": {
+      "type": "array",
+      "description": "Array of message objects",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "section": {
+                  "type": "string"
+                },
+                "excerpt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "message_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "document_id"
+  ]
+}

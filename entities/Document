@@ -1,0 +1,61 @@
+{
+  "name": "Document",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Document display name"
+    },
+    "original_filename": {
+      "type": "string",
+      "description": "Original uploaded filename"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "pdf",
+        "docx",
+        "xlsx"
+      ],
+      "description": "Type of uploaded file"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of the uploaded original file"
+    },
+    "file_size_bytes": {
+      "type": "number",
+      "description": "File size in bytes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "uploading",
+        "processing",
+        "ready",
+        "error"
+      ],
+      "default": "uploading",
+      "description": "Processing status"
+    },
+    "markdown_content": {
+      "type": "string",
+      "description": "Full extracted markdown output"
+    },
+    "extraction_log": {
+      "type": "string",
+      "description": "Log of extraction steps and any UNPARSED_CONTENT blocks"
+    },
+    "page_count": {
+      "type": "number",
+      "description": "Number of pages or sheets"
+    },
+    "language": {
+      "type": "string",
+      "description": "Detected primary language (e.g. ja, en, ja+en)"
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Error details if processing failed"
+    },
+ 
