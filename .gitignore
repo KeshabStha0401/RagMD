@@ -29,3 +29,6 @@ dist-ssr
 
 .env
 .vite
+.env.local
+.claude
+.github
